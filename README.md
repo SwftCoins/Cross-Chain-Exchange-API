@@ -1,7 +1,7 @@
 This document describes how to integrate SWFT Blockchain's cross-chain exchange API to a wallet or any crypto applications.
 Please refer to the link in the description for details.
 
-# 1.查询币种列表
+## 1.查询币种列表
 提供币种列表展示给用户，告诉用户哪些币可以进行兑换 
 
  详细参数参见API接口文档 查询货币清单接口 api/v1/queryCoinList  
@@ -51,7 +51,7 @@ Please refer to the link in the description for details.
 
 
  
-# 2.获取兑换汇率基本信息接口
+## 2.获取兑换汇率基本信息接口
 
 ### 接口汇率更新频率
  提供两个币种之间兑换的汇率，汇率更新频率为：4~6s   
@@ -89,7 +89,7 @@ receiveCoinAmt = （depositCoinAmt - depositCoinAmt * 兑换手续费率） *  i
 }
 ```
 
-# 3.创建订单
+## 3.创建订单
 
 ### 1. 调用频率限制
 创建订单有ip频率限制，2s内下单数量不能超过5个
@@ -142,7 +142,7 @@ receiveCoinAmt = （depositCoinAmt - depositCoinAmt * 兑换手续费率） *  i
   }
 ```
 
-# 4.查询订单状态
+## 4.查询订单状态
 
 ### 1. 接口调用
 详细参数参见API接口文档 查询订单状态接口 api/v2/queryOrderState，请求方式为POST application/json
@@ -152,7 +152,7 @@ receiveCoinAmt = （depositCoinAmt - depositCoinAmt * 兑换手续费率） *  i
 | --------   | -----:  |
 | minerFee      | 该值为存入币种使用SWFTC作为手续费时的汇率值，SWFTC手续费 = 存币数量 * minerFee |
 
-# 5.批量获取兑换汇率基本信息接口
+## 5.批量获取兑换汇率基本信息接口
 
 ### 1.接口汇率更新频率
 批量获取兑换汇率基本信息接口，汇率更新频率为：4~6s      
@@ -195,7 +195,7 @@ receiveCoinAmt = （depositCoinAmt - depositCoinAmt * 兑换手续费率） *  i
 实际到账数量 = （用户存币数量 - 兑换手续费数量）* 汇率 -  链上发币手续费
 receiveCoinAmt = （depositCoinAmt - depositCoinAmt * 兑换手续费率） *  instantRate - receiveCoinFee
 
-# 5.移除订单
+## 5.移除订单
 
 ### 1. 接口调用：
  https://{host}/api/v2/removeOrder
